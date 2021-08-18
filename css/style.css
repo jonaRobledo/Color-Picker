@@ -1,0 +1,27 @@
+#name-color {
+    color: #ffffff;
+    text-transform: uppercase;
+    text-shadow: 1px 0px 2px black, 0px 1px 2px black, 2px 1px 2px black, 1px 2px 2px black, -1px 0px 2px black, 0px -1px 2px black,
+        -2px -1px 2px black, -1px -2px 2px black;
+}
+
+i.config,
+i.trash {
+    color: #444444;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+i.config:hover,
+i.trash:hover {
+    background-color: #cececead;
+    cursor: pointer;
+}
+
+i.config:hover {
+    color: #52f7ee;
+}
+
+i.trash:hover {
+    color: #f75252;
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Color Picker by Jona</title>
+        <!-- Bootstrap V5 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+        />
+        <!-- Bootstrap Icons -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="./css/style.css" />
+    </head>
+    <body>
+        <!-- Header -->
+        <header class="bg-dark">
+            <div class="container">
+                <h1 class="text-center text-white py-4">Color<span class="text-white-50">//</span>Picker</h1>
+            </div>
+        </header>
+        <!-- Main Content -->
+        <div class="container mt-5" id="main-container">
+            <!-- Color Picker -->
+            <div class="col-6 col-lg-4 mx-auto border border-2 border-secondary rounded-3 p-0 my-2">
+                <p id="name-color" class="d-block fs-2 text-center border-2 border-dark border-bottom py-5 m-0"></p>
+                <input value="#ffffff" type="color" class="d-block w-75 mx-auto my-3" id="color-picker" />
+                <div class="container text-center my-3">
+                    <button class="btn btn-info d-inline-block mx-2 mb-2" id="btn-save">
+                        <i class="bi bi-plus-circle-fill pe-2"></i>Save Color
+                    </button>
+                    <button class="btn btn-danger d-inline-block mx-2 mb-2" id="btn-reset">
+                        <i class="bi bi-x-circle-fill pe-2"></i>Reset Color
+                    </button>
+                </div>
+            </div>
+            <!-- Botonera de Paleta -->
+            <div class="container col-9 col-lg-8 my-3 d-flex justify-content-around justify-content-lg-center">
+                <button class="btn btn-success mx-3" id="save-palette"><i class="bi bi-bookmark-check-fill pe-2"></i>Guardar Paleta</button>
+                <!-- Button trigger modal -->
+                <button class="btn btn-primary mx-3" data-bs-toggle="modal" data-bs-target="#palette-modal" id="print-btn">
+                    <i class="bi bi-printer-fill pe-2"></i>Generar PDF
+                </button>
+                <button class="btn btn-danger mx-3" id="reset-palette"><i class="bi bi-trash-fill pe-2"></i>Vaciar Paleta</button>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="palette-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-fullscreen">
+                    <div class="modal-content">
+                        <div class="modal-header d-print-none">
+                            <h5 class="modal-title" id="exampleModalLabel">Paleta | by Color//Picker</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body" id="modal-body">
+                            <div class="card col-7 mx-auto my-2 text-center border-2 border-dark print-card">
+                                <div class="card-img-top py-4 border-bottom"></div>
+                                <div class="card-body p-1">
+                                    <p class="card-text my-0 py-0">#FFFFFF</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer d-print-none">
+                            <button type="button" id="save-pdf" class="btn btn-primary">Guardar PDF</button>
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lista de Colores -->
+            <div class="container col-lg-10">
+                <p class="fs-4 text-center text-uppercase">Colores de la Paleta</p>
+                <hr class="mb-2" />
+                <div class="row" id="grid-colors"></div>
+            </div>
+        </div>
+
+        <!-- Template -->
+        <!-- ColorCard -->
+        <template id="card-template">
+            <div class="col-3 col-lg-2 py-2 px-3">
+                <div class="card text-center container-card">
+                    <div class="card-img-top py-4 border-bottom color-view">
+                        <i class="bi bi-gear-fill px-2 config"></i>
+                        <i class="bi bi-trash-fill px-2 trash"></i>
+                    </div>
+                    <p class="card-title pt-2 text-uppercase"></p>
+                </div>
+            </div>
+        </template>
+        <!-- Bootstrap Scripts -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"
+        ></script>
+        <!-- Custom Scripts -->
+        <script src="./js/app.js"></script>
+    </body>
+</html>
