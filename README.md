@@ -2,7 +2,7 @@
 
 Este Proyecto consiste en un creador de paletas de colores que se puede almacenar en LocalStorage.
 
-Puedes probar la aplicación en el siguiente [link](_Agregar Link\*_)
+Puedes probar la aplicación en el siguiente [link](https://jonarobledo.github.io/Color-Picker/).
 
 ---
 
